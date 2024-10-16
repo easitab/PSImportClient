@@ -1,0 +1,52 @@
+name: PSScriptAnalyzer and Pester
+
+on:
+  pull_request:
+    paths:
+    - 'source/**'
+    - 'tests/**'
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Check code quality
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+    - name: lint
+      uses: devblackops/github-action-psscriptanalyzer@master
+      with:
+        rootPath: /source
+        repoToken: ${{ secrets.GITHUB_TOKEN }}
+        failOnErrors: true
+        failOnWarnings: true
+        failOnInfos: true
+        settingsPath: ./.github/PSScriptAnalyzerSettings.psd1
+
+  function-test:
+    name: Run function tests
+    needs: lint
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, ubuntu-22.04, windows-latest, windows-2019, macos-latest, macos-13]
+    steps:
+    - uses: actions/checkout@main
+    - name: Invoke Pester
+      shell: pwsh
+      run: Invoke-Pester -Tag 'function'
+
+  module-test:
+    name: Run module tests
+    needs: function-test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, ubuntu-22.04, windows-latest, windows-2019, macos-latest, macos-13]
+    steps:
+    - uses: actions/checkout@main
+    - name: Invoke Pester
+      shell: pwsh
+      run: Invoke-Pester -Tag 'module'
