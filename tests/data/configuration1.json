@@ -1,0 +1,19 @@
+{
+    "$schema": "..\\..\\schemas\\configuration.schema.json",
+    "name":"configuration1",
+    "destinations" : [
+        {
+            "name" : "destination1",
+            "url" : "http://localhost:9999/",
+            "apiKey" : "61710298670tfc450de62e0f6ea2945ba325ad3e2j5gbe79h6d496b1977b7ea7"
+        }
+    ],
+    "sources": [
+        {
+            "name":"source1",
+            "importHandlerIdentifier": "importhandler1",
+            "configurationType":"external",
+            "icConfigurationIdentifier" : "icConfigurationIdentifier1"
+        }
+    ]
+}

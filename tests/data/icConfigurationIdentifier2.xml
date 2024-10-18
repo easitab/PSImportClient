@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jdbcConfiguration>
+  <itemsPerPosting>500</itemsPerPosting>
+  <sleepBetweenPostings>1</sleepBetweenPostings>
+  <identifier>icConfigurationIdentifier2</identifier>
+  <disabled>false</disabled>
+  <systemName>sysname_icConfigurationIdentifier2</systemName>
+  <configurationTags/>
+  <transformationXSL></transformationXSL>
+  <connectionString>jdbc:odbc:Driver={Microsoft Text Driver (*.txt; *.csv)};DBQ=C:\pathtofile\;Extensions=asc,csv,tab,txt</connectionString>
+  <query>select * from filename.csv</query>
+  <driverClassName>sun.jdbc.odbc.JdbcOdbcDriver</driverClassName>
+</jdbcConfiguration>

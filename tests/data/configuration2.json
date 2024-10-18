@@ -1,0 +1,18 @@
+{
+    "$schema": "..\\..\\schemas\\configuration.schema.json",
+    "name":"configuration2",
+    "destinations" : [
+        {
+            "name" : "destination2",
+            "url" : "http://localhost:9999/"
+        }
+    ],
+    "sources": [
+        {
+            "name":"source2",
+            "importHandlerIdentifier": "importhandler2",
+            "configurationType":"external",
+            "icConfigurationIdentifier" : "icConfigurationIdentifier2"
+        }
+    ]
+}
