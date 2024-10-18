@@ -25,7 +25,24 @@
   * Remove runtime variables
 * Script end
 
-## Local setup for develop
+## Dependency model
+
+![Dependency model](dependencymodel.png)
+
+## Dependency matris
+
+|Package|Script / Module|Version|
+|:---|:---|:---:|
+|PSImportClient-1.0.0.zip|psImportClient.ps1|1.0.0|
+||[Easit.PSImportClient.Commons](https://github.com/easitab/Easit.PSImportClient.Commons)|1.0.0|
+||[Easit.GO.Webservice](https://github.com/easitab/Easit.GO.Webservice)|1.1.2|
+||[Easit.PSImportClient.Jdbc](https://github.com/easitab/Easit.PSImportClient.Jdbc)|1.0.0|
+
+## Supported sources
+
+- CSV-file
+
+## Local setup for development
 
 1. Clone repo
 2. Download / Save PS-module 'Easit.GO.Webservice' and 'Easit.PSImportClient.Commons' to src folder.
@@ -35,10 +52,6 @@
 ```
 3. Depending on what configuration type the ImportClient configuration is download / save the corresponding Easit.PSImportClient.* module.
 
-## Supported sources
-
-- CSV-file
-
 ## Further reading
 
-All documentation for PSImportClient can be found at [techspace](https://docs.easitgo.com/techspace/easitgo/general/psimportclient/)
+All documentation for PSImportClient can be found at [techspace](https://docs.easitgo.com/techspace/easitgo/general/psimportclient/).
