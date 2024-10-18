@@ -1,0 +1,32 @@
+{
+    "$schema": "schemas\\psImportClientSettings.schema.json",
+    "defaultModules":[
+        "Easit.PSImportClient.Commons",
+        "Easit.GO.Webservice"
+    ],
+    "dependencyModules":{
+        "jdbcConfiguration":"Easit.PSImportClient.Jdbc"
+    },
+    "notificationSettings": {
+        "enabled": false,
+        "type":"smtp",
+        "SmtpServer": "",
+        "Port": 993,
+        "To": "",
+        "From": "",
+        "Subject": "",
+        "username" : "",
+        "password" : ""
+    },
+    "loggerSettings": {
+        "LoggingLevel": "DEBUG",
+        "LogName": "psImportClient",
+        "LogDirectory": "logs",
+        "RotationInterval": 30,
+        "LogNonOkImportResults":true
+    },
+	"archiveSettings": {
+		"directory":"archive",
+		"rotationInterval":30
+	}
+}

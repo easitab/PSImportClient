@@ -1,0 +1,54 @@
+{
+    "$schema": "..\\schemas\\configuration.schema.json",
+    "name":"exampleConfiguration",
+    "destinations" : [
+        {
+            "name" : "exampleDestination1",
+            "url" : "aURL",
+            "apiKey" : "apiKey",
+            "importHandlerIdentifier": "",
+            "dryRun" : false,
+			"writeXML" : false,
+            "invokeRestMethodParameters":{
+                "AllowUnencryptedAuthentication":true
+            }
+        }
+    ],
+    "sources": [
+        {
+            "name":"sourceName",
+            "configurationType":"external",
+            "icConfigurationIdentifier" : "exampleSource1",
+            "compare": {
+                "enabled" : true,
+                "properties" : [""],
+                "systemViewIdentifier": ""
+            },
+            "combineSourceAttributes" : {
+                "enabled" : true,
+                "combines" : [
+                    {
+                        "attributes" : ["",""],
+                        "character" : "-",
+                        "combineAttributeOutputName" : ""
+                    }
+                ]
+            },
+            "combineDestinationAttributes" : {
+                "enabled" : false,
+                "combines" : [
+                    {
+                        "attributes" : [""],
+                        "character" : "",
+                        "combineAttributeOutputName" : ""
+                    },
+                    {
+                        "attributes" : [""],
+                        "character" : "",
+                        "combineAttributeOutputName" : ""
+                    }
+                ]
+            }
+        }
+    ]
+}
