@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PSImportClient settings",
+  "description": "Schema for PSImportClient settings file",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "defaultModules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dependencyModules": {
+      "type": "object",
+      "properties": {
+        "jdbcConfiguration": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "jdbcConfiguration"
+      ]
+    },
+    "notificationSettings": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        },
+        "SmtpServer": {
+          "type": "string"
+        },
+        "Port": {
+          "type": "number"
+        },
+        "To": {
+          "type": "string"
+        },
+        "From": {
+          "type": "string"
+        },
+        "Subject": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "enabled",
+        "type",
+        "SmtpServer",
+        "Port",
+        "To",
+        "From",
+        "Subject",
+        "username",
+        "password"
+      ]
+    },
+    "loggerSettings": {
+      "type": "object",
+      "properties": {
+        "LoggingLevel": {
+          "type": "string"
+        },
+        "LogName": {
+          "type": "string"
+        },
+        "LogDirectory": {
+          "type": "string"
+        },
+        "RotationInterval": {
+          "type": "number"
+        },
+        "LogNonOkImportResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "LoggingLevel",
+        "LogName",
+        "LogDirectory",
+        "RotationInterval"
+      ]
+    },
+    "archiveSettings": {
+      "type": "object",
+      "properties": {
+        "directory": {
+          "type": "string"
+        },
+        "rotationInterval": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "directory",
+        "rotationInterval"
+      ]
+    }
+  },
+  "required": [
+    "defaultModules",
+    "dependencyModules",
+    "loggerSettings",
+    "archiveSettings"
+  ]
+}

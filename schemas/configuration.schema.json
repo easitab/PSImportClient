@@ -1,0 +1,162 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PSImportClient configuration",
+  "description": "Schema for configuration files used by PSImportClient",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "destinations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "disabled":{
+            "type":"boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "apiKey": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "url",
+          "apiKey"
+        ]
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "disabled":{
+            "type":"boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "configurationType": {
+            "type": "string"
+          },
+          "icConfigurationIdentifier": {
+            "type": "string"
+          },
+          "importHandlerIdentifier": {
+            "type": "string"
+          },
+          "compare": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "properties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "systemViewIdentifier": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "enabled",
+              "properties",
+              "systemViewIdentifier"
+            ]
+          },
+          "combineSourceAttributes": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "combines": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "character": {
+                      "type": "string"
+                    },
+                    "combineAttributeOutputName": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "attributes",
+                    "character",
+                    "combineAttributeOutputName"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "enabled",
+              "combines"
+            ]
+          },
+          "icConfig": {
+            "type": "object",
+            "properties": {
+              "ConfigurationType": {
+                "type": "string"
+              },
+              "itemsPerPosting": {
+                "type": "integer"
+              },
+              "sleepBetweenPostings": {
+                "type": "integer"
+              },
+              "transformationXSL": {
+                "type": "string"
+              },
+              "connectionString": {
+                "type": "string"
+              },
+              "query": {
+                "type": "string"
+              },
+              "driverClassName": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ConfigurationType",
+              "itemsPerPosting",
+              "sleepBetweenPostings",
+              "transformationXSL",
+              "connectionString",
+              "query",
+              "driverClassName"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "configurationType"
+        ]
+      }
+    }
+  },
+  "required": [
+    "name",
+    "destinations",
+    "sources"
+  ]
+}
