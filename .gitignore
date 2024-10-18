@@ -2,3 +2,5 @@ source/*/**
 logs
 Filer
 archive
+configurations/configuration.json
+PSImportClientSettings.json
